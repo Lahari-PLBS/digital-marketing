@@ -23,7 +23,7 @@ export default function Solutions() {
             {/* Header */}
             <div>
               <div className="text-md font-semibold text-gray-700 tracking-wider mb-4">
-                DIGITAL MARKETING SOLUTIONS
+                DIGITAL MARKETING SOLUTIONS...
               </div>
               <h2 className="text-4xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-6">
                 Generate 100% Traffic On Your Website
