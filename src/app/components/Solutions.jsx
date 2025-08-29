@@ -81,7 +81,7 @@ export default function Solutions() {
         </div>
 
         {/* Right Image Section */}
-        <div data-aos="flip-left" className="relative">
+        <div data-aos="flip-left" className="relative mt-12 sm:pb-6">
           {/* Main Image Grid */}
           <div className="grid grid-cols-2 gap-4 relative">
 

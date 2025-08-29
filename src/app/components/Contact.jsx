@@ -67,24 +67,24 @@ const ContactSection = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gray-900 py-16 px-4 relative">
+        <div className="min-h-screen bg-gray-900 py-8 lg:py-16 px-4 relative">
             <div className="max-w-7xl mx-auto">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
                     {/* Left Side - Contact Form */}
-                    <div className="space-y-8">
+                    <div className="space-y-6 lg:space-y-8 order-1">
                         {/* Header */}
-                        <div>
-                            <p className="text-orange-500 text-sm uppercase tracking-wider mb-4 font-semibold">
+                        <div className="text-center lg:text-left">
+                            <p className="text-orange-500 text-sm uppercase tracking-wider mb-3 lg:mb-4 font-semibold">
                                 GET IN TOUCH
                             </p>
-                            <h1 className="text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">
+                            <h1 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-6 lg:mb-8 leading-tight">
                                 Send us a Message
                             </h1>
                         </div>
 
                         {/* Contact Form */}
-                        <form onSubmit={handleSubmit} className="space-y-6">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="space-y-4 lg:space-y-6">
+                            <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-6">
                                 <input
                                     type="text"
                                     name="name"
@@ -107,7 +107,7 @@ const ContactSection = () => {
                                 />
                             </div>
 
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-6">
                                 <input
                                     type="email"
                                     name="email"
@@ -132,7 +132,7 @@ const ContactSection = () => {
                             <textarea
                                 name="message"
                                 placeholder="Message"
-                                rows="6"
+                                rows="5"
                                 value={formData.message}
                                 onChange={handleChange}
                                 className="w-full px-4 py-3 bg-gray-200 text-gray-700 placeholder-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:bg-white transition-all duration-300 resize-vertical"
@@ -141,18 +141,50 @@ const ContactSection = () => {
                             ></textarea>
 
                             <button
-                                type="submit"
+                                onClick={handleSubmit}
                                 disabled={isSubmitting}
-                                className="bg-orange-500 hover:bg-orange-600 disabled:bg-orange-300 disabled:cursor-not-allowed text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+                                className="w-full lg:w-auto bg-orange-500 hover:bg-orange-600 disabled:bg-orange-300 disabled:cursor-not-allowed text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-gray-900"
                             >
                                 {isSubmitting ? 'Sending...' : 'Send Message'}
                             </button>
-                        </form>
+                        </div>
                     </div>
 
                     {/* Right Side - Images and Support Badge */}
-                    <div data-aos="zoom-in" data-aos-easing="ease-in" className="relative">
-                        <div className="absolute">
+                    <div data-aos="zoom-in" data-aos-easing="ease-in" className="relative order-2 mt-8 lg:mt-0">
+                        {/* Mobile Layout - Stacked Images */}
+                        <div className="lg:hidden space-y-6">
+                            {/* Top Image for Mobile */}
+                            <div className="relative">
+                                <img
+                                    src="https://t3.ftcdn.net/jpg/06/38/82/10/360_F_638821021_n9ANLh4fSNXWNUJNURAWF0rQGRnCaa9f.jpg"
+                                    alt="Customer service representative"
+                                    className="w-full h-48 object-cover rounded-lg shadow-lg border-4 border-white"
+                                />
+                            </div>
+
+                            {/* 24/7 Support Badge for Mobile */}
+                            <div className="flex justify-center -mt-3 mb-3">
+                                <div className="bg-green-500 text-white px-4 py-3 rounded-lg shadow-lg">
+                                    <div className="text-center">
+                                        <div className="text-2xl font-bold">24/7</div>
+                                        <div className="text-xs font-medium">Customer Support</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Bottom Image for Mobile */}
+                            <div className="relative">
+                                <img
+                                    src="https://www.trivalleycareercenter.org/wp-content/uploads/2018/12/Handshake3-scaled.jpg"
+                                    alt="Business handshake"
+                                    className="w-full h-48 object-cover rounded-lg shadow-lg border-4 border-white"
+                                />
+                            </div>
+                        </div>
+
+                        {/* Desktop Layout - Overlapping Images */}
+                        <div className="hidden lg:block absolute">
                             {/* Top Image */}
                             <div className="relative mb-6 transform translate-y-20 translate-x-40 border-6 border-gray-300">
                                 <img
